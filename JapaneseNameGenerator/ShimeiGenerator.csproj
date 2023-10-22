@@ -1,9 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Title>Shimei Generator</Title>
+    <Authors>$(AssemblyName)</Authors>
+    <Description>Japanese fullname generator library</Description>
+    <Copyright>GNU General Public License</Copyright>
+    <PackageIcon>9d229c5fe7c6039452a4ce9d972178c9.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Axiks/ShimeiGen</RepositoryUrl>
+    <PackageTags>Japanese, Generator, Name Generator, Name, Surname Generator, Surname, Fullbame generator, fullname</PackageTags>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -44,6 +52,13 @@
 
   <ItemGroup>
     <Folder Include="IpaDic\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\9d229c5fe7c6039452a4ce9d972178c9.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
