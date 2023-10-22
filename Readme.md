@@ -1,10 +1,30 @@
-![icoappres](https://github.com/Axiks/ShimeiGen/assets/36519646/3bb30812-5e53-44f3-8ba2-e98cc5514a1e)
+<img src="https://github.com/Axiks/ShimeiGen/assets/36519646/3bb30812-5e53-44f3-8ba2-e98cc5514a1e" alt="App icon" width="128" style="border-radius: 50%;" />
+
 # Shimei Generator
 
 With this library you can generate Japanese names and surnames
 The program allows you to display a name or surname in Romanji or Kanji style!
 
-## Example of use
+| Package |                    NuGet ID                     |                         NuGet Status                         |
+| :-----: | :---------------------------------------------: | :----------------------------------------------------------: |
+| Shimei Generator  | [ShimeiGenerator](https://www.nuget.org/packages/ShimeiGenerator) | [![Stat](https://img.shields.io/nuget/v/ShimeiGenerator.svg)](https://www.nuget.org/packages/ShimeiGenerator) |
+
+## Features
+- Generate Japanese name
+- Generate Japanese surname
+- Generate fullname
+
+## Usage
+
+### Install
+
+The package can be installed by **NuGet**:
+
+```powershell
+Install-Package ShimeiGenerator
+```
+
+## Quick Start Example
 >! You can use the test console program included in this repository to check how the program works.
 
 ```
@@ -14,7 +34,7 @@ Person person = await jpGenerator.GetRandomPerson();
 Console.WriteLine($"{ person.RomanjiFullName } : {person.KanjiFullName} : {person.Sex}");
 ```
 
-## Examples of generations
+### Examples of generations
 ```
 shinkei kannumata : 伸啓 菅沼田 : M
 
