@@ -1,4 +1,5 @@
-﻿# Shimei Generator
+![icoappres](https://github.com/Axiks/ShimeiGen/assets/36519646/3bb30812-5e53-44f3-8ba2-e98cc5514a1e)
+# Shimei Generator
 
 With this library you can generate Japanese names and surnames
 The program allows you to display a name or surname in Romanji or Kanji style!
