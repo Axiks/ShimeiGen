@@ -11,11 +11,24 @@ namespace JapaneseNameGenerator
         private static Random _random;
         public ShimeiGenerator()
         {
-            _dbContext = new AppDbContext();
+            string root = Environment.CurrentDirectory;
+            _dbContext = new AppDbContext(root);
+            Init();
+        }
+
+        public ShimeiGenerator(string pathToFolder)
+        {
+            _dbContext = new AppDbContext(pathToFolder);
+            Init();
+        }
+
+        private void Init()
+        {
             _nameCount = _dbContext.FirstNames.Count();
             _surnameCount = _dbContext.LastNames.Count();
             _random = new Random();
         }
+
         private (JpName name, SexEntity sex) GetRandomName()
         {
             int randIdPosition = _random.Next(1, _nameCount);
