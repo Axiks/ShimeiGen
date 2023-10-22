@@ -1,16 +1,15 @@
-﻿namespace JapaneseNameGenerator.Models
+﻿using System;
+
+namespace JapaneseNameGenerator.Models
 {
-    public struct JpName
+    public class JpName
     {
-        private string _kanjiName;
+        public string KanjiName { get; }
+        public string RomanjiName { get; }
         public JpName(string kanjiName)
         {
-            _kanjiName = kanjiName;
-        }
-        public async Task<string> GetKanjiAsync() => _kanjiName;
-        public async Task<string> GetRomanjiAsync()
-        {
-            return await KawazuHelper.ConverterToRomanjiAsync(_kanjiName);
+            KanjiName = kanjiName;
+            RomanjiName = KawazuHelper.ConverterToRomanjiAsync(kanjiName).Result;
         }
     }
 }

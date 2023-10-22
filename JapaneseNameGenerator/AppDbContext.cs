@@ -12,7 +12,7 @@ namespace JapaneseNameGenerator
 
         public AppDbContext(string pathToFolder)
         {
-            DbPath = System.IO.Path.Combine(pathToFolder, "JapaneseNamesDatabase", "NamesDb.sqlite");
+            DbPath = System.IO.Path.Combine(pathToFolder, "JapaneseNamesDatabase", "names.sqlite");
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
