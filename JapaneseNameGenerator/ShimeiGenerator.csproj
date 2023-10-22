@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\artwa\.nuget\packages\kawazu\1.1.4\contentFiles\any\net5.0\AUTHORS" />
+    <Content Remove="C:\Users\artwa\.nuget\packages\kawazu\1.1.4\contentFiles\any\net5.0\char.bin" />
+    <Content Remove="C:\Users\artwa\.nuget\packages\kawazu\1.1.4\contentFiles\any\net5.0\COPYING" />
+    <Content Remove="C:\Users\artwa\.nuget\packages\kawazu\1.1.4\contentFiles\any\net5.0\matrix.bin" />
+    <Content Remove="C:\Users\artwa\.nuget\packages\kawazu\1.1.4\contentFiles\any\net5.0\sys.dic" />
+    <Content Remove="C:\Users\artwa\.nuget\packages\kawazu\1.1.4\contentFiles\any\net5.0\unk.dic" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.12" />
+	  <PackageReference Include="Kawazu" Version="1.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="IpaDic\char.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="IpaDic\dicrc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="IpaDic\matrix.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="IpaDic\sys.dic">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="IpaDic\unk.dic">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="JapaneseNamesDatabase\names.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="IpaDic\" />
+  </ItemGroup>
+
+</Project>
