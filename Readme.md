@@ -4,6 +4,8 @@ With this library you can generate Japanese names and surnames
 The program allows you to display a name or surname in Romanji or Kanji style!
 
 ## Example of use
+>! You can use the test console program included in this repository to check how the program works.
+
 ```
 ShimeiGenerator jpGenerator = new ShimeiGenerator();
 
