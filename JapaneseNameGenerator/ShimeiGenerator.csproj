@@ -8,7 +8,7 @@
     <Authors>$(AssemblyName)</Authors>
     <Description>Japanese fullname generator library</Description>
     <Copyright>GNU General Public License</Copyright>
-    <PackageIcon>9d229c5fe7c6039452a4ce9d972178c9.png</PackageIcon>
+    <PackageIcon>icoappres.png</PackageIcon>
     <RepositoryUrl>https://github.com/Axiks/ShimeiGen</RepositoryUrl>
     <PackageTags>Japanese, Generator, Name Generator, Name, Surname Generator, Surname, Fullbame generator, fullname</PackageTags>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
@@ -61,11 +61,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\Downloads\9d229c5fe7c6039452a4ce9d972178c9.png">
+    <None Include="..\..\..\..\Downloads\icoappres.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
     <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\Readme.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
