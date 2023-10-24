@@ -1,5 +1,6 @@
 ﻿using JapaneseNameGenerator.Entityes;
 using JapaneseNameGenerator.Models;
+using System.Xml.Linq;
 
 namespace JapaneseNameGenerator
 {
@@ -32,15 +33,17 @@ namespace JapaneseNameGenerator
         private (JpName name, SexEntity sex) GetRandomPersonAtom()
         {
             int randIdPosition = _random.Next(1, _nameCount);
-            var nameEntity = _dbContext.FirstNames.FirstOrDefault(x => x.Id == randIdPosition && x.Name != null);
-            var name = new JpName(nameEntity.Name);
-            return (name, sex: nameEntity.Sex);
+            var nameEntity = _dbContext.FirstNames.FirstOrDefault(x => x.Id == randIdPosition && x.Name != null && x.Name != "");
+            var result = new JpName(nameEntity.Name);
+            if (result.RomanjiName == "") return GetRandomPersonAtom(); // Generate another value if translation through dictionary failed
+            return (result, sex: nameEntity.Sex);
         }
         private JpName GetRandomSurname()
         {
             int randIdPosition = _random.Next(1, _surnameCount);
-            var nameEntity = _dbContext.LastNames.FirstOrDefault(x => x.Id == randIdPosition && x.Name != null);
+            var nameEntity = _dbContext.LastNames.FirstOrDefault(x => x.Id == randIdPosition && x.Name != null && x.Name != "");
             var result = new JpName(nameEntity.Name);
+            if (result.RomanjiName == "") return GetRandomSurname(); // Generate another value if translation through dictionary failed
             return result;
         }
         public async Task<Person> GetRandomPerson()
