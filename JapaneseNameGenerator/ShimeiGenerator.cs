@@ -29,25 +29,23 @@ namespace JapaneseNameGenerator
             _random = new Random();
         }
 
-        private (JpName name, SexEntity sex) GetRandomName()
+        private (JpName name, SexEntity sex) GetRandomPersonAtom()
         {
             int randIdPosition = _random.Next(1, _nameCount);
-            var nameEntity = _dbContext.FirstNames.FirstOrDefault(x => x.Id == randIdPosition);
-            if (nameEntity.Name == null) return GetRandomName();
+            var nameEntity = _dbContext.FirstNames.FirstOrDefault(x => x.Id == randIdPosition && x.Name != null);
             var name = new JpName(nameEntity.Name);
             return (name, sex: nameEntity.Sex);
         }
         private JpName GetRandomSurname()
         {
             int randIdPosition = _random.Next(1, _surnameCount);
-            var nameEntity = _dbContext.LastNames.FirstOrDefault(x => x.Id == randIdPosition);
-            if (nameEntity.Name == null) return GetRandomSurname();
+            var nameEntity = _dbContext.LastNames.FirstOrDefault(x => x.Id == randIdPosition && x.Name != null);
             var result = new JpName(nameEntity.Name);
             return result;
         }
         public async Task<Person> GetRandomPerson()
         {
-            var personAtom = GetRandomName();
+            var personAtom = GetRandomPersonAtom();
             return new Person{ Name = personAtom.name, Surname = GetRandomSurname(), Sex = personAtom.sex };
         }
     }
